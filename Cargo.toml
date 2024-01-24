@@ -1,8 +1,37 @@
+[workspace]
+resolver = "2"
+
 [package]
 name = "learn-rust-wasm"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+async-trait = "0.1.77"
+cfg-if = "1.0.0"
+futures = "0.3.30"
+getrandom = {version = "0.2.8", features = ["js"] }
+rand = "0.8.5"
+reqwest = "0.11.23"
+serde = "1.0.195"
+serde-wasm-bindgen = "0.6.3"
+serde_json = "1.0.111"
+serde_yaml = "0.9.30"
+tokio = { version = "1.35.1", features = ["macros", "rt", "sync"] }
+tokio-stream = "0.1.14"
+tracing = "0.1.40"
+tsify = "0.4.5"
+wasm-bindgen = "0.2.90"
+wasm-bindgen-futures = "0.4.40"
+console_error_panic_hook = { version = "0.1.6", optional = true }
+wee_alloc = { version = "0.4.5", optional = true }
+js-sys = "0.3.67"
+tracing-wasm = "0.2.1"
+wasm-streams = "0.4.0"
+ws_stream_wasm = "0.7.4"
+web-sys = {version = "0.3", features = [ "console", "ReadableStream", "BinaryType", "Blob", "ErrorEvent", "FileReader", "MessageEvent", "ProgressEvent", "WebSocket", ]}
